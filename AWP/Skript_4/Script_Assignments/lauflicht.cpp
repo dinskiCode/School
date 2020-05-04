@@ -1,3 +1,5 @@
+// TODO: Verzichten auf umkopieren von Werten im Array; Animation sieht etwas komisch aus (flackert)...
+
 #include <iostream>
 #include <windows.h>
 #include <stdlib.h>
