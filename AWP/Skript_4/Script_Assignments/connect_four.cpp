@@ -2,7 +2,6 @@
 
 using namespace std;
 
-// quick and dirty...
 
 // Funktionsdeklarationen 
 void print_game();
@@ -14,12 +13,18 @@ void waehle_spalte();
 void check_board_full();
 void search_field();
 void search_left();
+void search_right();
+void search_down();	// might rename this to vertical search
+void search_up_right();
+void search_up_left();
+void search_down_left();
+void search_down_right();
 
 // Variablen
 char spieler_name_a[50] = {};
 char spieler_name_b[50] = {};
 bool player_one = true;
-int spielmodus = 0;	// 1- oder 2-Spielermodus
+int spielmodus = 0;
 int spalte = 0;
 char connect_four_values[5][8] = {};
 bool w_p_one = false;
@@ -30,10 +35,13 @@ int checker_pos[2] = { 0, 0 };
 int main() {
 	menu();
 
+	getchar();
+	getchar();
+	return 0;
 }
 
 void menu() {
-	cout << "Bitte waehlen Sie den Spielmodus: (1 = 1-Spieler, 2 = 2-Spieler)\n";
+	cout << "Bitte waehlen Sie den Spielmodus: (1 = 1-Spieler, 2 = 2-Spieler)\nSpielmodus: ";
 	cin >> spielmodus;
 	if (spielmodus == 2) {
 		cout << "Willkommen bei 4-gewinnt!\nBitte tragen Sie ihren Namen ein (Reihenfolge im Spiel wird zufaellig ermittelt):\n";	//TODO: zufaellige Reihenfolge
@@ -103,12 +111,13 @@ void multiplayer() {
 			player_one = true;
 		}
 		check_board_full();
+		print_game();
 	}
 	if (w_p_one == true) {
-		cout << "\nGlueckwunsch " << spieler_name_a << "! Du hast gegen " << spieler_name_b << " gewonnen!";
+		cout << "\nGlueckwunsch <<" << spieler_name_a << ">>! Du hast gegen <<" << spieler_name_b << ">> gewonnen!";
 	}
 	else if (w_p_two == true) {
-		cout << "\nGlueckwunsch " << spieler_name_b << "! Du hast gegen " << spieler_name_a << " gewonnen!";
+		cout << "\nGlueckwunsch <<" << spieler_name_b << ">>! Du hast gegen <<" << spieler_name_a << ">> gewonnen!";
 	}
 	else {
 		cout << "\nSpielfeld voll, unentschieden!";
@@ -134,7 +143,7 @@ void drop_checker() {
 		}
 	}
 	if (dropped == true) {
-		// put search in here???
+		search_field();
 		player_one = false;
 	}
 	else {
@@ -157,6 +166,12 @@ void waehle_spalte() {
 
 void search_field() {
 	search_left();
+	search_right();
+	search_down();	// might rename this to 'search vertically'
+	search_up_right();
+	search_up_left();
+	search_down_left();
+	search_down_right();
 }
 
 void search_left() {
@@ -190,14 +205,12 @@ void search_right() {
 		// do nothing
 	}
 	else {
-		for (int i = 0; i < 5; i++) {
-			for (int k = spalte - 1; k < spalte - 1 + 4; k++) {
-				if (connect_four_values[checker_pos[0]][k] == 'x') {
-					x_counter++;
-				}
-				else {
-					o_counter++;
-				}
+		for (int k = checker_pos[1]; k < checker_pos[1] + 4; k++) {
+			if (connect_four_values[checker_pos[0]][k] == 'X') {
+				x_counter++;
+			}
+			else if (connect_four_values[checker_pos[0]][k] == 'O') {
+				o_counter++;
 			}
 		}
 	}
@@ -209,20 +222,128 @@ void search_right() {
 	}
 }
 
-void search_up() {
-	int x_counter = 0;
-	int o_counter = 0;
-	if (checker_pos[0] < 3) {
+void search_down() {
+	int x_counter = 0; 
+	int o_counter = 0; 
+	if (checker_pos[0] > 1) {
 		// do nothing
 	}
 	else {
-		for (int i = 0; i < 5; i++) {
+		for (int i = checker_pos[0]; i < checker_pos[0] + 4; i++) {
 			if (connect_four_values[i][checker_pos[1]] == 'X') {
 				x_counter++;
-			} 
+			}
 			else if (connect_four_values[i][checker_pos[1]] == 'O') {
 				o_counter++;
 			}
+		}
+	}
+	if (x_counter >= 4) {
+		w_p_one = true;
+	}
+	else if (o_counter >= 4) {
+		w_p_two = true;
+	}
+}
+
+void search_up_right() {
+	int x_counter = 0; 
+	int o_counter = 0; 
+	int k = checker_pos[1];
+
+	if (checker_pos[0] < 3 || checker_pos[1] > 4) {
+		// do nothing 
+	}
+	else {
+		for (int i = checker_pos[0]; i > checker_pos[0] - 4; i--) {
+			if (connect_four_values[i][k] == 'X') {
+				x_counter++;
+			}
+			else if (connect_four_values[i][k] == 'O') {
+				o_counter++;
+			}
+			k++;
+		}
+	}
+	if (x_counter >= 4) {
+		w_p_one = true;
+	}
+	else if (o_counter >= 4) {
+		w_p_two = true;
+	}
+}
+
+void search_up_left() {
+	int x_counter = 0;
+	int o_counter = 0;
+	int k = checker_pos[1];
+
+	if (checker_pos[0] < 3 || checker_pos[1] < 3) {
+		// do nothing 
+	}
+	else {
+		for (int i = checker_pos[0]; i > checker_pos[0] - 4; i--) {
+			if (connect_four_values[i][k] == 'X') {
+				x_counter++;
+			}
+			else if (connect_four_values[i][k] == 'O') {
+				o_counter++;
+			}
+			k--;
+		}
+	}
+	if (x_counter >= 4) {
+		w_p_one = true;
+	}
+	else if (o_counter >= 4) {
+		w_p_two = true;
+	}
+}
+
+void search_down_left() {
+	int x_counter = 0;
+	int o_counter = 0;
+	int k = checker_pos[1];
+
+	if (checker_pos[0] > 1 || checker_pos[1] < 3) {
+		// do nothing 
+	}
+	else {
+		for (int i = checker_pos[0]; i < checker_pos[0] + 4; i++) {
+			if (connect_four_values[i][k] == 'X') {
+				x_counter++;
+			}
+			else if (connect_four_values[i][k] == 'O') {
+				o_counter++;
+			}
+			k--;
+		}
+	}
+	if (x_counter >= 4) {
+		w_p_one = true;
+	}
+	else if (o_counter >= 4) {
+		w_p_two = true;
+	}
+}
+
+void search_down_right() {
+	int x_counter = 0;
+	int o_counter = 0;
+	int k = checker_pos[1];
+
+	if (checker_pos[0] > 1 || checker_pos[1] > 4) {
+		// do nothing 
+	}
+	else {
+		for (int i = checker_pos[0]; i < checker_pos[0] + 4; i++) {
+			if (connect_four_values[i][k] == 'X') {
+				x_counter++;
+			}
+			else if (connect_four_values[i][k] == 'O') {
+				o_counter++;
+			}
+			k++;
 		}
 	}
 	if (x_counter >= 4) {
