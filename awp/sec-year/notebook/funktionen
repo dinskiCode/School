@@ -1,0 +1,16 @@
+Funktionen:
+    c++ = one-way-compiler (von oben nach unten)
+    --> Prototyp z.B.: 
+    
+    void ausgabe_zahl(int zahl);
+    
+    void main() {}
+    
+    void ausgabe_zahl(int zahl) {
+        cout << zahl;
+    }
+
+    int quadrat(int basis) {
+        return basis*basis;
+    }
+    cout << quadrat(10);

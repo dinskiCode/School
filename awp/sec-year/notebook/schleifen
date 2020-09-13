@@ -1,0 +1,46 @@
+Schleifen:
+    Generell: 
+    - Zählergesteuert, Kopf-/Fußgesteuert, (nicht-)abweisend
+    1. For-Schleifen:
+    -Initialisierung:
+        // Initialis.  Eintrittsbedingung  Reinitialisierung 
+        for (int zahler = 0; zahler < 10; zaehler++) {
+            
+        }
+                                            0+2 (immer wieder)
+        for (int zaehler = 0; zaehler < 10; zaehler + 2) {
+            // Endlosschleife!! richtig wäre zahler += 2
+        } 
+
+        for (int zaehler = 0; zaehler = 0; zaehler += 1) {
+            // zaehler = 0 --> 0 --> false, steigt nie in die schleife ein
+        }
+
+        for (int zaehler = 0; zahler < 10;) {
+            cout << Daten[zaehler++]; // funktioniert
+        }
+
+        for (int zaehler = 0; zaehler < 10; ) {
+            cout << Daten[++zaehler];
+            --> Daten[10] gibts nicht, gibt zufällige zahl aus speicher aus
+        }
+
+
+    2. while-schleife
+        
+        x = 10; 
+        while (x>0) {
+            cout << x;
+            // Endlosschleife, weil x nie verändert wird
+        }
+
+        while (x = 1){ // True --> Endlosschleife, ohne Abbruch innerhalb der Schleife
+            
+        }
+
+        while (x == 1) // oder <= usw. --> in diesem fall false, wird nie ausgeführt
+    
+    3. do-while-schleife
+        do {
+            // wird mindestens einmal ausgeführt = nicht-abweisend
+        } while (...);

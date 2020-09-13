@@ -1,0 +1,4 @@
+Entscheidungen:
+    - if ((x == 10) || (x == 9)) {cout << "ok";} else { cout << "not okay";} --> besser klammern setzen 
+    - int k = 10; 
+      switch (k) { case 1: do_something(); break; case 2: do_something_else(); break; default: do_that();}

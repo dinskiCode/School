@@ -1,0 +1,17 @@
+Variablen:
+    -Datentypen: float, double, int, char...
+    -Elementar: bool, int, double, char
+    
+    -Definition: int k; //bei geschachtelten schleifen auf namen achten! (nicht i, k, l usw.)
+    -Initialisierung: int k = 10;
+    -Deklaration: extern int k; // reine bekanntmachung
+
+    Felder:
+    double daten[10] = {1,2,3}; // wird mit 0 aufgefüllt 
+    cout << daten[5] // in diesem Fall 0
+
+    zweidimensionale Felder:
+    int werte[5][3] = {0}; // sieht aus wie ein Schachbrett, bzw. {{1,2,3},{},{},{},{}}
+    // werte [2][1] entspricht dritte zeile, zweite spalte
+    // werte [4][4] ergibt keinen Fehler im Compiler --> schreibt einfach "danach" im Speicher; Mit Glück passiert nichts, meistens aber schon, "wenn man nicht damit rechnet"
+    // werte [1][7] = 6 --> überschreibt feld [3][1], da auch zweidim felder nicht untereinander, sondern hintereinander im hauptspeicher stehen --> cout << werte[3][1]; --> 6
