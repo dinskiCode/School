@@ -14,7 +14,7 @@ struct t_wuerfelspiel {
 };
 
 int main() {
-    cout << "\n\t\t--- Das Würfelspiel ---\n\n";
+    cout << "\n\t--- Das Würfelspiel ---\n\n";
     srand((unsigned)time(NULL));
 
     const int spieler = 8;
