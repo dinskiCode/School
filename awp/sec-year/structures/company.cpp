@@ -49,7 +49,7 @@ int main() {
     developer dev;
     personal_data dev_data = {"John Doe", "Hollywood Boulevard"};
     dev.data = dev_data;
-    dev.programming_language = "cpp";
+    //dev.programming_language = "cpp";
     dev.is_senior = true;
     payment dev_payment_2018 = {60000, "payment of senior dev 2018"};
     payment dev_payment_2019 = {63000, "payment of senior dev 2019"};
@@ -69,7 +69,8 @@ int main() {
     company my_company;
     my_company.mapping = mapping;
 
-    cout << my_company.mapping.manager[0].devs[0].compensation[0].comment; // prints 'payment of senior dev 2018'
+    cout << my_company.mapping.manager[0].devs[0].compensation[0].comment << endl; // prints 'payment of senior dev 2018'
+    cout << my_company.mapping.manager[0].devs[0].programming_language; // prints empty line
 
     cout << endl;
     return 1;
