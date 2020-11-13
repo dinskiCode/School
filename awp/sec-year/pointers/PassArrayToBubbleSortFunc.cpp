@@ -3,7 +3,7 @@
 using namespace std;
 
 
-const int MAX_ELEMENTE = 5; // Festlegung der Arraygröße
+const int MAX_ELEMENTE = 5; // Festlegung der Arraygrï¿½ï¿½e
 
 // Einfache Hilfsfunktion zum Ziehen einer Zahl zwischen 1 und 100
 int getZufallszahlVon1Bis100();
