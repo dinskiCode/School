@@ -8,6 +8,7 @@ const int MAX_ELEMENTE = 5; // Festlegung der Arraygr��e
 // Einfache Hilfsfunktion zum Ziehen einer Zahl zwischen 1 und 100
 int getZufallszahlVon1Bis100();
 
+// oder: void InitArray(int *zahlen, int len);
 void InitArray(int zahlen[], int len);
 void ZeigeArray(int zahlen[], int len);
 void BubbleSort(int zahlen[], int len);
@@ -47,6 +48,7 @@ int getZufallszahlVon1Bis100()
 }
 
 
+// oder: void InitArray(int *aiZahlen, int len) {
 void InitArray(int aiZahlen[], int len) {
 	for (int i = 0; i < len; i++) {
 		aiZahlen[i] = getZufallszahlVon1Bis100();
