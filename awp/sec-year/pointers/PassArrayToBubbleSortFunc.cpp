@@ -32,7 +32,7 @@ int main()
 	ZeigeArray(aiZahlen, MAX_ELEMENTE);
 
 	// Sortierung mit Bubblesort
-	BubbleSort(aiZahlen, MAX_ELEMENTE);
+	BubbleSort(aiZahlen + 1, MAX_ELEMENTE);
 	cout << endl << endl;
 	cout << "Array-Inhalt nach dem Sortieren:" << endl;
 	cout << "--------------------------------" << endl;
@@ -51,7 +51,8 @@ int getZufallszahlVon1Bis100()
 // oder: void InitArray(int *aiZahlen, int len) {
 void InitArray(int aiZahlen[], int len) {
 	for (int i = 0; i < len; i++) {
-		aiZahlen[i] = getZufallszahlVon1Bis100();
+		//aiZahlen[i] = getZufallszahlVon1Bis100();
+		*(aiZahlen+i) = getZufallszahlVon1Bis100();
 	}
 }
 
