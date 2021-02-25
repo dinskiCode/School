@@ -12,17 +12,23 @@ double mittelwert(Knoten* anker);
 
 int main() {
 	Knoten* anker = new Knoten;
+	int zahlEingabe;
+	char nochEineZahl = 'j';
 	
-	addKnoten(anker, 10);
+	while (nochEineZahl == 'j') {
+		cout << "Zahl eingeben: ";
+		cin >> zahlEingabe;
+		
+		addKnoten(anker, zahlEingabe);
 
-	cout << anker->naechster << endl;
-	cout << anker->naechster->zahl << endl;
+		cout << "Noch eine Zahl (j/n)?: ";
+		cin >> nochEineZahl;
+	}
 
-	addKnoten(anker, 20);
-	cout << anker->naechster->naechster->zahl << endl;
+	cout << "Mittelwert: " << mittelwert(anker);
 
-	addKnoten(anker, 30);
-	cout << anker->naechster->naechster->naechster->zahl;
+	delete anker;
+	anker = NULL;
 }
 
 void addKnoten(Knoten* anker, int zahl) {
@@ -41,5 +47,17 @@ void addKnoten(Knoten* anker, int zahl) {
 }
 
 double mittelwert(Knoten* anker) {
-	return 0;
+	int anzahl = 0, gesamt = 0;
+	Knoten* lauf = anker;
+	if (anker->naechster == NULL) {
+		return 0;
+	}
+	else {
+		while (lauf->naechster != NULL) {
+			lauf = lauf->naechster;
+			anzahl++;
+			gesamt += lauf->zahl;
+		}
+		return gesamt / double(anzahl);
+	}
 }
