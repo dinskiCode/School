@@ -1,3 +1,4 @@
 *.pdf
 *.opendb
 a.out
+/non-code
