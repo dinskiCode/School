@@ -11,4 +11,4 @@ awp-sql() {
 <code>source /path/to/dump</code>
 <br><br>
 <p>use db:</p>
-<code>use <db_name></code>
+<code>use db-name</code>
