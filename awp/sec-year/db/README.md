@@ -2,8 +2,8 @@ open xampp (macos applications gui --> "xampp (other)"), start servers
 
 cd /Applications/XAMPP/bin; ./mysql -u root
 
-use of dump:
+create tables by dump:
 source /path/to/dump
 
-or use own db:
+use db:
 use <db_name>
