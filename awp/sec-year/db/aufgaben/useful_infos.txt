@@ -1,0 +1,2 @@
+1. inner join statt kreuzprodukt, weil beim inner join die bedingung angegeben werden muss, sonst gibt es eine Fehlermeldung;
+   beim kreuzprodukt wäre der befehl auch ohne bedingung korrekt, aber eben semantisch nicht;

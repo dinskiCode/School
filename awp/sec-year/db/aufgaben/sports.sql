@@ -1,0 +1,11 @@
+1. select o.ordid, count(*) as anzahl_posten from ord o inner join item as i on i.ordid = o.ordid group by o.ordid;
+2. select e.empno, e.ename, count(c.name) as anzahl_kunden from emp e inner join customer c on e.empno = c.repid group by e.empno;
+3. select state as staat, count(*) as anzahl from customer group by state; 
+4. select job, min(sal) as minimum, max(sal) as maximum from emp group by job having maximum - minimum > 0;
+5. select c.custid, c.name, sum(ord.total) from ord inner join customer c on c.custid = ord.custid where shipdate like '1986%' group by custid;
+6. select c.* from customer c inner join emp e on c.repid = e.empno where e.ename = 'ALLEN';
+7. select orderdate, count(*) from ord o inner join item i on o.ordid = i.ordid where i.prodid = 100860 group by orderdate;
+8. select o.*, c.name, c.city from ord o inner join customer c on o.custid = c.custid;
+9. select c.name as Kunde, sum(o.total) as Auftragsvolumen from ord o inner join customer c on o.custid = c.custid group by c.custid;
+10. select e.ename, e.empno, c.name from emp e left join customer c on e.empno = c.repid;
+11. select * from emp where sal = (select max(sal) from emp);
