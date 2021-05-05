@@ -1,9 +1,12 @@
 open xampp (macos applications gui --> "xampp (other)"), start servers
 
-cd /Applications/XAMPP/bin; ./mysql -u root
-
+<code>
+awp-sql() {
+    cd /Applications/XAMPP/bin; ./mysql -u root
+}
+</code>
 create tables by dump:
-source /path/to/dump
+<code>source /path/to/dump</code>
 
 use db:
-use <db_name>
+<code>use <db_name></code>
