@@ -9,3 +9,5 @@
 9. select c.name as Kunde, sum(o.total) as Auftragsvolumen from ord o inner join customer c on o.custid = c.custid group by c.custid;
 10. select e.ename, e.empno, c.name from emp e left join customer c on e.empno = c.repid;
 11. select * from emp where sal = (select max(sal) from emp);
+12. select e.* from emp e inner join customer c on e.empno = c.repid where c.name = 'JOCKSPORTS';
+13. select * from ord where total < (select avg(total) from ord);
