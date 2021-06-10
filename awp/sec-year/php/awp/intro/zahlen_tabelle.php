@@ -10,15 +10,15 @@
     <div>
     <table border="1">
         <?php
-            function isPrime($n)
-            {
-                if ($n <= 1)
+            function isPrime($n){
+                if ($n <= 1) {
                     return false;
-            
-                for ($i = 2; $i < $n; $i++)
-                    if ($n % $i == 0)
+                }
+                for ($i = 2; $i < $n; $i++) {
+                    if ($n % $i == 0) {
                         return false;
-            
+                    }
+                }
                 return true;
             }
 
@@ -29,10 +29,13 @@
                 for ($k=0; $k < $groeße; $k++) { 
                     $num = $num + 1;
                     if (isPrime($num)) {
-                        echo "<td style='background: lightgrey'>$num</td>";
+                        //echo "<td style='background: lightgrey'>$num</td>";
+                        $farbe = 'red';
                     } else {
-                        echo "<td>$num</td>";
+                        //echo "<td>$num</td>";
+                        $farbe = 'white';
                     }
+                    echo "<td style='background: $farbe'>$num</td>";
                 }
                 echo "</tr>";
             }
