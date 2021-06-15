@@ -12,9 +12,15 @@
             $zahlen = array();
             $tabelle_zeilen = $tabelle_spalten = 7;
             $nummer = 0;
+            $dubletten = 0;
             $background = 'white';
-            for ($i=0; $i < 6; $i++) { 
-                $zahlen[] = mt_rand(1, 49);
+            while (sizeof($zahlen) < 6) {
+                $zahl = mt_rand(1, 49);
+                if (!in_array($zahl, $zahlen)) {
+                    $zahlen[] = $zahl;
+                } else {
+                    $dubletten++;
+                }
             }
             
             // zeilen zeichnen
@@ -22,12 +28,10 @@
                 echo "<tr>"; 
                 for ($k=0; $k < $tabelle_spalten; $k++) { 
                     $nummer = $nummer + 1;
-                    for ($m=0; $m < sizeof($zahlen); $m++) { 
-                        if (in_array($nummer, $zahlen)) {
-                            $background = 'lightgrey';
-                        } else {
-                            $background = 'white';
-                        }
+                    if (in_array($nummer, $zahlen)) {
+                        $background = 'lightgreen';
+                    } else {
+                        $background = 'white';
                     }
                     echo "<td style='background: $background'>$nummer</td>";
                 }
@@ -35,5 +39,8 @@
             }
         ?>
     </table>
+    <?php
+        echo "<br>Dubletten: $dubletten";
+    ?>
 </body>
 </html>
