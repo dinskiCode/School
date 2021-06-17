@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Essen aufs Zimmer</title>
+    <link rel="stylesheet" href="formstyle.css">
+</head>
+<body>
+    <form action="form.php" method="POST">
+        <div class="form-input">
+            Ihr Name:<br>
+            <input type="text" name="kundenName">
+        </div>
+        <div class="form-input">
+            Ihre Zimmernummer:<br>
+            <input type="text" name="zimmerNr">
+        </div>
+        <div class="form-input">
+            Welchen Käse wünschen Sie?
+            <div class="input-checkbox">
+                <input type="checkbox" name="kaese[]" value="Camembert">Camembert
+            </div>
+            <div class="input-checkbox">
+                <input type="checkbox" name="kaese[]" value="Emmentaler">Emmentaler
+            </div>
+            <div class="input-checkbox">
+                <input type="checkbox" name="kaese[]" value="Edamer">Edamer
+            </div>
+            <div class="input-checkbox">
+                <input type="checkbox" name="kaese[]" value="Kraversal">Kraversal
+            </div>
+        </div>
+        <div class="form-input">
+            Haben Sie einen weiteren Wunsch?<br>
+            <input type="text" name="wunsch">
+        </div>
+        <div class="form-input">
+            Ihr Zahlungswunsch:
+            <select name="zahlungswunsch" id="">
+                <option value="Bei Lieferung">Bei Lieferung</option>
+                <option value="Vorkasse">Vorkasse</option>
+            </select>
+        </div>
+        <hr>
+        <input type="submit" value="Abschicken" name="submitButton">
+        <input type="reset" value="Verwerfen" name="resetButton">
+    </form>
+</body>
+</html>
