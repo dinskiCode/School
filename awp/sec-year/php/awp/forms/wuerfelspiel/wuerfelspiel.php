@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-
 </head>
 <body>
     <?php
         $wurfanzahl = 25;
         $umbruch = 10;
         $zahlen = array();
-        $statistik = array();
+        $statistik = array(0, 0, 0, 0, 0, 0);
         if(isset($_POST['wuerfel_btn'])) {
             if (!empty($_POST['wurfanzahl'])) {
                 $wurfanzahl = $_POST['wurfanzahl'];
@@ -19,7 +18,7 @@
             if (!empty($_POST['statistik'])) {
                 $statistik = $_POST['statistik'];
             } else {
-                $statistik = array();
+                $statistik = array(0, 0, 0, 0, 0, 0);
             }
         }
         echo "<h1>Würfeln mit $wurfanzahl Würfel im Becher</h1>";
@@ -31,9 +30,9 @@
         }
         for ($i = 1; $i <= sizeof($zahlen); $i++) {
             if ($i % $umbruch == 0) {
-                echo " ", $zahlen[$i-1], "<br>";
+                echo " <img src=images/w", $zahlen[$i-1], ".JPG><br>";
             } else {
-                echo " ", $zahlen[$i-1];
+                echo " <img src=images/w", $zahlen[$i-1], ".JPG>";
             }
         }
     ?>
@@ -53,11 +52,15 @@
     <?php
         $sum_augenzahlen = 0;
         $avg_augenzahl = 0;
+        $anzahl_gesamt = 0;
         foreach($statistik as $stats=> $anzahl) {
-            echo $stats, "=", $anzahl, " ";
+            echo " <img src=images/w", $stats, ".JPG>", "x", $anzahl, " ";
             $sum_augenzahlen += $anzahl*$stats;
+            $anzahl_gesamt += $anzahl;
         }
-    ?>
+        echo "<br><br>Summe der Augenzahlen: ", $sum_augenzahlen;
+        echo "<br>Durchschnittliche Augenzahl: ", number_format($sum_augenzahlen/$anzahl_gesamt, 2);
+     ?>
     
 </body>
 </html>
