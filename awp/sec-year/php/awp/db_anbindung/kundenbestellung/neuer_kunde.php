@@ -15,16 +15,26 @@
     </div>
     <h3>Neuer Kunde</h3>
     <?php 
-    $server = '127.0.0.1';
-    $user = 'root';
-    $pw = '';
-    $db_name = 'warenhandel';
-    $db_link = mysqli_connect($server, $user, $pw, $db_name);
-    if ($db_link) {
-        echo "Verbindung erfolgreich";
-    } else {
-        echo "Verbindung NICHT erfolgreich";
-    }
+        $server = '127.0.0.1';
+        $user = 'root';
+        $pw = '';
+        $db_name = 'warenhandel';
+        $db_link = mysqli_connect($server, $user, $pw, $db_name);
+        if ($db_link) {
+            echo "Verbindung erfolgreich";
+        } else {
+            echo "Verbindung NICHT erfolgreich";
+        }
+
+        // kunden anlegen
+        if (isset($_POST['btnHinzu'])) {
+            $name = $_POST['name'];
+            $vorname = $_POST['vorname'];
+            $strasse = $_POST['strasse'];
+            $sql_query = "INSERT INTO kunde (name, vorname, strasse) VALUES ('$name', '$vorname', '$strasse')";
+            echo $sql_query;
+            $anlegen = mysqli_query($db_link, $sql_query);
+        }
     ?>
     <form action="" method="post">
         <input type="text" disabled size="11"> Kundennummer (wird automatisch erzeugt)<br>

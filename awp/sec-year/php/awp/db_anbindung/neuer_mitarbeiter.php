@@ -35,7 +35,7 @@
             }
         } else if (isset($_POST['btnAnpassen'])) {
             $prozent = $_POST['anpassungsGrad'];
-            $sql_query = 'UPDATE '.$tabellen_name.' SET gehalt = gehalt * '.($prozent/100);
+            $sql_query = 'UPDATE '.$tabellen_name.' SET gehalt = gehalt * '.(1+ ($prozent/100));
             echo $sql_query;
             $anpassen = mysqli_query($db_link, $sql_query);
         } else if (isset($_POST['btnLoeschen'])) {
@@ -54,6 +54,8 @@
         Gehalt:<br>
         <input type="text" name="gehalt"><br><br>
         <input type="submit" value="Datensatz einfügen" name="btnMitarbeiterAnlegen">
+        
+        
         <br><br>
         <h4>Alle Gehälter anpassen</h4>
         Verändern um:<br>
