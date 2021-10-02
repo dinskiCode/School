@@ -1,0 +1,13 @@
+/Users/matthias/school/awp/third-year/csharp-test/C_Sharp_Test/C_Sharp_Test/bin/Debug/netcoreapp3.1/C_Sharp_Test.deps.json
+/Users/matthias/school/awp/third-year/csharp-test/C_Sharp_Test/C_Sharp_Test/bin/Debug/netcoreapp3.1/C_Sharp_Test.runtimeconfig.json
+/Users/matthias/school/awp/third-year/csharp-test/C_Sharp_Test/C_Sharp_Test/bin/Debug/netcoreapp3.1/C_Sharp_Test.runtimeconfig.dev.json
+/Users/matthias/school/awp/third-year/csharp-test/C_Sharp_Test/C_Sharp_Test/bin/Debug/netcoreapp3.1/C_Sharp_Test.dll
+/Users/matthias/school/awp/third-year/csharp-test/C_Sharp_Test/C_Sharp_Test/bin/Debug/netcoreapp3.1/C_Sharp_Test.pdb
+/Users/matthias/school/awp/third-year/csharp-test/C_Sharp_Test/C_Sharp_Test/obj/Debug/netcoreapp3.1/C_Sharp_Test.csproj.AssemblyReference.cache
+/Users/matthias/school/awp/third-year/csharp-test/C_Sharp_Test/C_Sharp_Test/obj/Debug/netcoreapp3.1/C_Sharp_Test.GeneratedMSBuildEditorConfig.editorconfig
+/Users/matthias/school/awp/third-year/csharp-test/C_Sharp_Test/C_Sharp_Test/obj/Debug/netcoreapp3.1/C_Sharp_Test.AssemblyInfoInputs.cache
+/Users/matthias/school/awp/third-year/csharp-test/C_Sharp_Test/C_Sharp_Test/obj/Debug/netcoreapp3.1/C_Sharp_Test.AssemblyInfo.cs
+/Users/matthias/school/awp/third-year/csharp-test/C_Sharp_Test/C_Sharp_Test/obj/Debug/netcoreapp3.1/C_Sharp_Test.csproj.CoreCompileInputs.cache
+/Users/matthias/school/awp/third-year/csharp-test/C_Sharp_Test/C_Sharp_Test/obj/Debug/netcoreapp3.1/C_Sharp_Test.dll
+/Users/matthias/school/awp/third-year/csharp-test/C_Sharp_Test/C_Sharp_Test/obj/Debug/netcoreapp3.1/C_Sharp_Test.pdb
+/Users/matthias/school/awp/third-year/csharp-test/C_Sharp_Test/C_Sharp_Test/obj/Debug/netcoreapp3.1/C_Sharp_Test.genruntimeconfig.cache
