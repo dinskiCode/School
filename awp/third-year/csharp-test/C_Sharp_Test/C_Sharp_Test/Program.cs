@@ -19,7 +19,7 @@ namespace C_Sharp_Test
         {
             Console.WriteLine("Hello World!");
             Program consoleProgram = new Program("Consoleprogram", 2021, 12.99);
-            Console.WriteLine(consoleProgram.name, " = program name");
+            Console.WriteLine(consoleProgram.name + " = program name");
         }
     }
 }
