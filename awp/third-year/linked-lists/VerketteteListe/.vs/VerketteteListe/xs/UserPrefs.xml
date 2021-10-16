@@ -1,14 +1,13 @@
-﻿<Properties StartupConfiguration="{2D3F2916-DE32-465F-BDA0-DEDF391A61CD}|Default">
-  <MonoDevelop.Ide.ItemProperties.MySQL-Connector PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="MySQL-Connector/Program.cs">
+﻿<Properties StartupConfiguration="{6B642215-64A7-4A99-ACB8-38292F712B9E}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Program.cs">
     <Files>
-      <File FileName="MySQL-Connector/Program.cs" Line="6" Column="20" />
+      <File FileName="Program.cs" Line="16" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="MySQL-Connector" expanded="True">
-            <Node name="MySQL-Connector" expanded="True" selected="True" />
+          <Node name="VerketteteListe" expanded="True" selected="True">
+            <Node name="VerketteteListe" expanded="True" />
           </Node>
         </State>
       </Pad>
@@ -20,4 +19,5 @@
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.VerketteteListe PreferredExecutionTarget="MonoDevelop.Default" />
 </Properties>
